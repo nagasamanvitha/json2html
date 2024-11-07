@@ -1,5 +1,5 @@
 export default function json2html(data) {
-    // Extract column names from the first object in data and add "Gender" if missing
+    // Define the columns for the table
     const columns = ["Name", "Age", "Gender"];
 
     // Start building the HTML table string with data-user attribute
@@ -9,7 +9,7 @@ export default function json2html(data) {
         </thead>
         <tbody>`;
 
-    // Add each row from the data array
+    // Populate rows in the table body
     data.forEach(row => {
         html += `<tr>${columns.map(col => `<td>${row[col] || ''}</td>`).join('')}</tr>`;
     });
